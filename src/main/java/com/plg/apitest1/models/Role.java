@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import jakarta.persistence.*;
 import java.util.List;
 
-// import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "roles")
@@ -26,6 +26,7 @@ public class Role {
     private String roleDescription;
 
     // Relación con la entidad User
-    @OneToMany(mappedBy = "role")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "role")
+    @JsonIgnore
     private List<User> users;
 }

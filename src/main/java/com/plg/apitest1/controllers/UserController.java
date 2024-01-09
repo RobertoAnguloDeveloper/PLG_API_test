@@ -1,6 +1,7 @@
 package com.plg.apitest1.controllers;
 
 import com.plg.apitest1.models.User;
+import com.plg.apitest1.repositories.UserRepository;
 import com.plg.apitest1.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,6 +34,13 @@ public class UserController {
             return ResponseEntity.ok(users);
         }
     }
+
+    // @GetMapping("/all")
+    // public String test() {
+    //     System.out.println("Testing");
+    //     System.out.println(userService.getAllUsers().get(0).getEmail());
+    //     return "YES";
+    // }
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Integer id) {
