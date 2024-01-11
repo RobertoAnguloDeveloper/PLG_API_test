@@ -34,7 +34,6 @@ public class UserHobbyService {
                 UserHobby updatedUserHobby = existingUserHobby.get();
 
                 // Actualiza los campos según sea necesario
-                updatedUserHobby.setRegisterDate(userHobby.getRegisterDate());
                 updatedUserHobby.setUser(userHobby.getUser());
                 updatedUserHobby.setHobby(userHobby.getHobby());
 

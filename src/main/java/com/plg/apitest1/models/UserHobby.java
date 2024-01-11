@@ -16,9 +16,6 @@ public class UserHobby {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "register_date", length = 255)
-    private String registerDate;
-
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
