@@ -1,7 +1,6 @@
 package com.plg.apitest1.controllers;
 
 import com.plg.apitest1.models.User;
-import com.plg.apitest1.repositories.UserRepository;
 import com.plg.apitest1.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

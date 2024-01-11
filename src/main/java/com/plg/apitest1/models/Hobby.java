@@ -6,34 +6,24 @@ import lombok.AllArgsConstructor;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.*;
-
 import java.util.List;
 
+import jakarta.persistence.*;
+
 @Entity
-@Table(name = "users")
+@Table(name = "hobbies")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Hobby {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "username", length = 20)
-    private String username;
+    @Column(name = "hobbie_name", length = 255, nullable = false)
+    private String hobbieName;
 
-    @Column(name = "password", length = 8)
-    private String password;
-
-    @Column(name = "email", length = 255)
-    private String email;
-
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
-
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "hobby")
     @JsonIgnore
     private List<UserHobby> userHobbies;
 }
